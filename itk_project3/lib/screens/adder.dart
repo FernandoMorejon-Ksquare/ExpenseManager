@@ -29,9 +29,7 @@ class _AddConceptScreenState extends State<AddConceptScreen> {
   ];
 
   final TextEditingController _titleCtrl = TextEditingController();
-
   final TextEditingController _amountCtrl = TextEditingController();
-
   final TextEditingController _descCtrl = TextEditingController();
 
   bool isIncome = true;
@@ -40,7 +38,7 @@ class _AddConceptScreenState extends State<AddConceptScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff5ebd93),
+        backgroundColor: const Color(0xff5ebd93),
         title: Text(
           AppString.createConcept,
           style: const TextStyle(color: Colors.white),
@@ -93,7 +91,7 @@ class _AddConceptScreenState extends State<AddConceptScreen> {
                 height: 20,
               ),
               TextField(
-                key: Key('titleTextField'),
+                key: const Key('titleTextField'),
                 maxLength: 15,
                 controller: _titleCtrl,
                 decoration: InputDecoration(
@@ -104,7 +102,7 @@ class _AddConceptScreenState extends State<AddConceptScreen> {
               ),
               const SizedBox(height: 8),
               TextField(
-                key: Key('amountTextField'),
+                key: const Key('amountTextField'),
                 keyboardType: TextInputType.number,
                 maxLength: 9,
                 controller: _amountCtrl,
@@ -116,13 +114,13 @@ class _AddConceptScreenState extends State<AddConceptScreen> {
               ),
               const SizedBox(height: 8),
               TextField(
-                key: Key('descTextField'),
+                key: const Key('descTextField'),
                 controller: _descCtrl,
                 maxLines: 5,
                 maxLength: 250,
                 decoration: InputDecoration(
                     alignLabelWithHint: true,
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                     labelText: AppString.description,
                     labelStyle:
                         const TextStyle(color: Colors.grey, fontSize: 22)),
@@ -131,12 +129,10 @@ class _AddConceptScreenState extends State<AddConceptScreen> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  key: Key('addTaskButton'),
+                  key: const Key('addTaskButton'),
                   onPressed: () {
-                    if (_titleCtrl.text is String &&
-                        _titleCtrl.text.isNotEmpty &&
+                    if (_titleCtrl.text.isNotEmpty &&
                         num.tryParse(_amountCtrl.text) is num &&
-                        _descCtrl.text is String &&
                         _descCtrl.text.isNotEmpty) {
                       if (num.tryParse(_amountCtrl.text)! > 0) {
                         String now = DateFormat('d-M-y hh:mm aaa')
