@@ -57,7 +57,7 @@ class Balance extends StatelessWidget {
                   },
                   child: Text(
                     AppString.create,
-                    style: TextStyle(color: Color(0xff5ebd93)),
+                    style: const TextStyle(color: Color(0xff5ebd93)),
                   )),
             )
           ],
